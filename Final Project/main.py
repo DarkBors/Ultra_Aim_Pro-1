@@ -13,7 +13,7 @@ def main():
                 ##                                                                               ##
                 ## Ultra96-based PYNQ AI-Managed Performance and Reliability Optimization system ##
                 ##                                                                               ##
-                ##                  Created by: Dark Bors v1.1.0-Official                        ##
+                ##                  Created by: Dark Bors v2.0.0-Official                        ##
                 ##                                                                               ##
                 ##                                                                 Final Project ##
                 ###################################################################################
