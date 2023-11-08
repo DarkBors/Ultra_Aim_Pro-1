@@ -7,6 +7,7 @@ from .visualization_panel import VisualizationPanel  # Adjust the import accordi
 from model.neural_network import NeuralNetworkModel
 from data.preprocessing import preprocess_data
 from PIL import Image, ImageTk
+from app_logging import logger
 
 class MainWindow(CTk):
     def __init__(self):
@@ -40,7 +41,7 @@ class MainWindow(CTk):
         logo_path = r'G:\My Drive\Final Project Boris_E\Final Project\Ultra_Aim_Pro\Final Project\graphics\rsz_11logo.png'
         logo_image = Image.open(logo_path)
         self.logo_image = ImageTk.PhotoImage(logo_image)  # Convert to PhotoImage
-        self.logo_label = CTkLabel(self.main_tab, image=self.logo_image)
+        self.logo_label = CTkLabel(self.main_tab, image=self.logo_image, text="")
         self.logo_label.grid(row=0, column=0, columnspan=3, pady=10, padx=10)
 
         # Button to upload the data file
@@ -142,13 +143,17 @@ class MainWindow(CTk):
             try:
                 # Update the file info label with the selected file
                 self.file_info_label.configure(text=f'Selected: {file_path}')
+                logger.info(f"ℹ️ File path chosen: {file_path}")  # Replace print with logging
+
                 # Preprocess the data
                 self.data = preprocess_data(file_path)
+                logger.info("ℹ️ Data preprocessed successfully.")
                 print("Data preprocessed successfully.")  # Debug print
                 # Enable the train button
                 self.train_button.configure(state='normal')
             except Exception as e:
                 messagebox.showerror('Error', f'An error occurred while loading the data: {e}')
+                logger.critical(f"⛔ An error occurred while loading the data: {e}")  # Replace messagebox with logging
                 print(f"An error occurred: {e}")  # Debug print
 
     def train_model(self):
@@ -179,9 +184,12 @@ class MainWindow(CTk):
 
             # Convert scores to percentage and display them
             r2_score_percent = r2 * 100
+            logger.info(f"ℹ️ R^2 Score: {r2_score_percent:.4f}%\nMSE: {mse:.4f}")  # Replace messagebox with logging
             messagebox.showinfo('Model Evaluation', f'R^2 Score: {r2_score_percent:.4f}%\nMSE: {mse:.4f}')
         else:
             messagebox.showwarning('Warning', 'Please upload data before training.')
+            logger.warning("⚠️ Please upload data before training.")  # Replace messagebox with logging
+
 
 if __name__ == '__main__':
     root = MainWindow()
