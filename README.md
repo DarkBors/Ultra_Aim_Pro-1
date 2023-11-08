@@ -3,7 +3,7 @@ Ultra96-based PYNQ AI-Managed Performance and Reliability Optimization system
 
 
 
-###################################################################################
+##################################################################################
 ##                             ULTRA-AIM-PRO                                     ##
 ##                                                                               ##
 ## Ultra96-based PYNQ AI-Managed Performance and Reliability Optimization system ##
