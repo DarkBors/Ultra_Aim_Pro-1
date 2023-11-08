@@ -1,5 +1,5 @@
 # main_window.py
-# This file creates the main window for the GUI.
+# This file creates the main window for the GUI..
 
 from customtkinter import *
 from tkinter import filedialog, messagebox
