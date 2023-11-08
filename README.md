@@ -2,6 +2,20 @@
 Ultra96-based PYNQ AI-Managed Performance and Reliability Optimization system
 
 
+
+###################################################################################
+##                             ULTRA-AIM-PRO                                     ##
+##                                                                               ##
+## Ultra96-based PYNQ AI-Managed Performance and Reliability Optimization system ##
+##                                                                               ##
+##                  Created by: Dark Bors v1.0.3-beta                           ##
+##                                                                               ##
+##                                                                 Final Project ##
+###################################################################################
+
+
+
+
 project_root/
 |-- gui/
 |   |-- __init__.py
